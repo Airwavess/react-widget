@@ -47,7 +47,7 @@ const data = {
     "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
 };
 
-const Album = ({ images, videos }) => {
+const Album = ({ images = [], videos = [] }) => {
   const classes = useStyles();
 
   return (
@@ -141,7 +141,6 @@ export async function getStaticProps() {
   await Promise.all([reqImage, reqVideo]).then((res) => {
     images = res[0].data;
     videos = res[1].data;
-    console.log(images, videos);
   });
 
   return {
