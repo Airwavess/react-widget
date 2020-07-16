@@ -32,10 +32,11 @@ yarn dev
 
 **Project Architecture**
 
+瀏覽於 `docs/` 資料夾中的 [project architecture](./docs/architecture.md)。
 
 **Note**
 
-
+瀏覽於 `docs/` 資料夾中的 [note](./docs/note.md)。
 
 ## Tests
 
