@@ -39,7 +39,7 @@ const InfoCard = ({
         component={id.includes("image") ? "img" : "video"}
         className={classes.cardMedia}
         image={url}
-        title="Contemplative Reptile"
+        title="card-iframe"
         controls
       />
       <CardContent className={classes.cardContent}>

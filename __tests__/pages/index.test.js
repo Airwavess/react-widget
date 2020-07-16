@@ -9,30 +9,32 @@ describe("Album component testing", () => {
   const images = [
     {
       id: "image1",
-      url:
-        "https://pdc2.csie.ncu.edu.tw:8888/images/jerry-zhang-y8lcotrghpe-unspla.jpg",
-      title: "Jerry Zhang image",
-      content: "Jerry Zhang",
+      url: "test.jpg",
+      title: "test image",
+      content: "test image content",
     },
   ];
   const videos = [
     {
       id: "video1",
-      url: "https://pdc2.csie.ncu.edu.tw:8888/videos/Pexels Videos 1539953.mp4",
-      title: "Jerry Zhang video",
-      content: "Jerry Zhang",
+      url: "test.mp4",
+      title: "test video",
+      content: "test video content",
     },
   ];
+
   test("loads and displays cards image", () => {
     render(<Album images={images} />);
 
-    expect(screen.getByText("Jerry Zhang image")).toBeDefined();
+    expect(screen.getByText(images[0].title)).toBeDefined();
+    expect(screen.getByText(images[0].content)).toBeDefined();
   });
 
   test("loads and displays cards video", () => {
     render(<Album videos={videos} />);
 
-    expect(screen.getByText("Jerry Zhang video")).toBeDefined();
+    expect(screen.getByText(videos[0].title)).toBeDefined();
+    expect(screen.getByText(videos[0].content)).toBeDefined();
   });
 
   describe("getStaticProps testing", () => {
