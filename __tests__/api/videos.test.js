@@ -1,9 +1,9 @@
-jest.mock("../../../../lib/imageDB");
+jest.mock("../../lib/videoDB");
 
-import images from "../images";
-import { getImages } from "../../../../lib/imageDB";
+import videos from "../../pages/api/v1/videos";
+import { getVideos } from "../../lib/videoDB";
 
-describe("Images API route", () => {
+describe("Videos API route", () => {
   let req, res;
 
   beforeEach(() => {
@@ -15,13 +15,13 @@ describe("Images API route", () => {
       setHeader: jest.fn(),
     };
 
-    getImages.mockClear();
+    getVideos.mockClear();
   });
 
   test("Should return 405 if the method is not GET", async () => {
     req.method = "POST";
 
-    images(req, res);
+    videos(req, res);
 
     expect(res.status).toBeCalledWith(405);
     expect(res.end).toHaveBeenCalledTimes(1);
@@ -31,18 +31,18 @@ describe("Images API route", () => {
   test("Should return 200 if the method is GET", async () => {
     req.method = "GET";
 
-    images(req, res);
+    videos(req, res);
 
     expect(res.status).toBeCalledWith(200);
   });
 
   test("Should return correct data if the method is GET", async () => {
-    getImages.mockReturnValue({ data: "data" });
+    getVideos.mockReturnValue({ data: "data" });
     req.method = "GET";
 
-    images(req, res);
+    videos(req, res);
 
-    expect(getImages).toHaveBeenCalledTimes(1);
+    expect(getVideos).toHaveBeenCalledTimes(1);
     expect(res.json).toBeCalledWith({ data: "data" });
   });
 });

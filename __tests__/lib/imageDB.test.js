@@ -1,5 +1,5 @@
-import { getImages, getImagesId } from "../lib/imageDB";
-import * as data from "../lib/data";
+import { getImages, getImagesId } from "../../lib/imageDB";
+import * as data from "../../lib/data";
 
 describe("imageDB library testing", () => {
   describe("test getImages", () => {

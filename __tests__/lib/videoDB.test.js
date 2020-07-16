@@ -1,5 +1,5 @@
-import { getVideos, getVideosId } from "../lib/videoDB";
-import * as data from "../lib/data";
+import { getVideos, getVideosId } from "../../lib/videoDB";
+import * as data from "../../lib/data";
 
 describe("videoDB library testing", () => {
   describe("test getVideos", () => {

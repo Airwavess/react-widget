@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
-import Album, { getStaticProps } from "../pages/index";
+import { render, screen } from "@testing-library/react";
+import Album, { getStaticProps } from "../../pages/index";
 
 jest.mock("axios");
 
