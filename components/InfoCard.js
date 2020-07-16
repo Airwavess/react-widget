@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   cardMedia: {
-    height: 180
+    height: 180,
   },
   cardContent: {
     height: "100%",
@@ -21,7 +21,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const InfoCard = ({ id, url, title, content, style }) => {
+const InfoCard = ({
+  id,
+  url,
+  title,
+  content,
+  style,
+  sharedLink,
+  openModal,
+}) => {
   const classes = useStyles();
 
   return (
@@ -42,14 +50,13 @@ const InfoCard = ({ id, url, title, content, style }) => {
           {content}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
+      {sharedLink && (
+        <CardActions>
+          <Button size="small" color="primary" onClick={() => openModal(id)}>
+            Share
+          </Button>
+        </CardActions>
+      )}
     </Card>
   );
 };

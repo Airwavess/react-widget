@@ -64,7 +64,7 @@ const Album = ({ images = [], videos = [] }) => {
               align="center"
               color="textPrimary"
             >
-              Album layout
+              Images & Videos
             </Typography>
             <Typography
               variant="h5"
