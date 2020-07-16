@@ -1,3 +1,4 @@
+import Link from "next/link";
 import AppBar from "@material-ui/core/AppBar";
 import CameraIcon from "@material-ui/icons/PhotoCamera";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,6 +9,9 @@ const useStyle = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
   },
+  homeLink: {
+    cursor: "pointer",
+  },
 }));
 
 const NavBar = () => {
@@ -17,9 +21,16 @@ const NavBar = () => {
     <AppBar position="relative">
       <Toolbar>
         <CameraIcon className={classes.icon} />
-        <Typography variant="h6" color="inherit" noWrap>
-          React widget
-        </Typography>
+        <Link href="/">
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
+            className={classes.homeLink}
+          >
+            React widget
+          </Typography>
+        </Link>
       </Toolbar>
     </AppBar>
   );
