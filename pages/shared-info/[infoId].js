@@ -1,7 +1,5 @@
 import axios from "axios";
 import InfoCard from "../../components/InfoCard";
-import { getImagesId } from "../../lib/imageDB";
-import { getVideosId } from "../../lib/videoDB";
 import { API_HOST } from "../../src/config";
 
 const SharedContent = (props) => {
@@ -9,8 +7,18 @@ const SharedContent = (props) => {
 };
 
 export async function getStaticPaths() {
-  const imagesId = getImagesId();
-  const videosId = getVideosId();
+  const IMAGES_API = `${API_HOST}/api/v1/images`;
+  const VIDEOS_API = `${API_HOST}/api/v1/videos`;
+
+  const reqImage = axios.get(IMAGES_API);
+  const reqVideo = axios.get(VIDEOS_API);
+
+  let imagesId, videosId;
+  await Promise.all([reqImage, reqVideo]).then((res) => {
+    imagesId = res[0].data.map((i) => i.id);
+    videosId = res[1].data.map((v) => v.id);
+  });
+
   const dataSrcId = [...imagesId, ...videosId];
 
   return {

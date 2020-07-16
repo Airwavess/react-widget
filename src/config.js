@@ -1,1 +1,1 @@
-export const API_HOST = "https://react-widget.vercel.app";
+export const API_HOST = "https://react-widget-api.vercel.app";
