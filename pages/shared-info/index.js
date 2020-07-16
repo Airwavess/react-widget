@@ -7,7 +7,7 @@ import Container from "@material-ui/core/Container";
 import NavBar from "../../components/NavBar";
 import InfoCard from "../../components/InfoCard";
 import SharedLinkModal from "../../components/SharedLinkModal";
-import { API_HOST } from "../../src/config";
+import { HOST, API_HOST } from "../../src/config";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -38,7 +38,7 @@ const SharedInfo = ({ images = [], videos = [] }) => {
   };
 
   const handleOpenModal = (id) => {
-    const url = `${API_HOST}/shared-info/${id}`;
+    const url = `${HOST}/shared-info/${id}`;
     setEmbedUrl(url);
     setOpenModal(true);
   };
