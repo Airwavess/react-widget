@@ -1,6 +1,6 @@
 # React Widget
 
-這個專案為使用 React 製作能夠鑲嵌於其他網站的元件，可以至 [demo site](https://react-widget.vercel.app/) 瀏覽網站。
+這個專案為使用 React 製作能夠鑲嵌於其他網站的元件，可以至 [demo site](https://react-widget.vercel.app/) 瀏覽網站與 [Wix](https://prairie5270.wixsite.com/mysite) 瀏覽結果。
 
 ## Quick Start
 
