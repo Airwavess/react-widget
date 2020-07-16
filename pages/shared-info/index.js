@@ -7,6 +7,7 @@ import Container from "@material-ui/core/Container";
 import NavBar from "../../components/NavBar";
 import InfoCard from "../../components/InfoCard";
 import SharedLinkModal from "../../components/SharedLinkModal";
+import { API_HOST } from "../../src/config";
 
 const useStyles = makeStyles((theme) => ({
   heroContent: {
@@ -37,7 +38,7 @@ const SharedInfo = ({ images = [], videos = [] }) => {
   };
 
   const handleOpenModal = (id) => {
-    const url = `https://pdc2.csie.ncu.edu.tw:8888/shared-info/${id}`;
+    const url = `${API_HOST}/shared-info/${id}`;
     setEmbedUrl(url);
     setOpenModal(true);
   };
@@ -106,8 +107,8 @@ const SharedInfo = ({ images = [], videos = [] }) => {
 };
 
 export async function getStaticProps() {
-  const IMAGES_API = "https://pdc2.csie.ncu.edu.tw:8888/api/v1/images";
-  const VIDEOS_API = "https://pdc2.csie.ncu.edu.tw:8888/api/v1/videos";
+  const IMAGES_API = `${API_HOST}/api/v1/images`;
+  const VIDEOS_API = `${API_HOST}/api/v1/videos`;
 
   const reqImage = axios.get(IMAGES_API);
   const reqVideo = axios.get(VIDEOS_API);

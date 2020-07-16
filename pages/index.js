@@ -8,6 +8,7 @@ import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import NavBar from "../components/NavBar";
 import InfoCard from "../components/InfoCard";
+import { API_HOST } from "../src/config";
 
 function Copyright() {
   return (
@@ -131,8 +132,8 @@ const Album = ({ images = [], videos = [] }) => {
 };
 
 export async function getStaticProps() {
-  const IMAGES_API = "https://pdc2.csie.ncu.edu.tw:8888/api/v1/images";
-  const VIDEOS_API = "https://pdc2.csie.ncu.edu.tw:8888/api/v1/videos";
+  const IMAGES_API = `${API_HOST}/api/v1/images`;
+  const VIDEOS_API = `${API_HOST}/api/v1/videos`;
 
   const reqImage = axios.get(IMAGES_API);
   const reqVideo = axios.get(VIDEOS_API);

@@ -3,6 +3,8 @@ import axios from "axios";
 import { render, screen } from "@testing-library/react";
 import Album, { getStaticProps } from "../../pages/index";
 
+import { API_HOST } from "../../src/config";
+
 jest.mock("axios");
 
 describe("Album component testing", () => {
@@ -41,10 +43,10 @@ describe("Album component testing", () => {
     test("return correct data", async () => {
       axios.get.mockImplementation((url) => {
         switch (url) {
-          case "https://pdc2.csie.ncu.edu.tw:8888/api/v1/images":
+          case `${API_HOST}/api/v1/images`:
             return { data: images };
             break;
-          case "https://pdc2.csie.ncu.edu.tw:8888/api/v1/videos":
+          case `${API_HOST}/api/v1/videos`:
             return { data: videos };
             break;
           default:

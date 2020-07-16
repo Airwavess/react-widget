@@ -9,6 +9,7 @@ import {
 } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import SharedInfo, { getStaticProps } from "../../pages/shared-info/index";
+import { API_HOST } from "../../src/config";
 
 jest.mock("axios");
 
@@ -34,10 +35,10 @@ describe("Shared-info testing", () => {
     test("return correct data", async () => {
       axios.get.mockImplementation((url) => {
         switch (url) {
-          case "https://pdc2.csie.ncu.edu.tw:8888/api/v1/images":
+          case `${API_HOST}/api/v1/images`:
             return { data: images };
             break;
-          case "https://pdc2.csie.ncu.edu.tw:8888/api/v1/videos":
+          case `${API_HOST}/api/v1/videos`:
             return { data: videos };
             break;
           default:
@@ -65,8 +66,7 @@ describe("Shared-info testing", () => {
       // open dialog
       fireEvent.click(screen.getByText("Share"));
 
-      const expectedUrl =
-        "https://pdc2.csie.ncu.edu.tw:8888/shared-info/image1";
+      const expectedUrl = `${API_HOST}/shared-info/image1`;
       expect(screen.getByDisplayValue(expectedUrl)).toBeDefined();
     });
 
@@ -76,8 +76,7 @@ describe("Shared-info testing", () => {
       // open dialog
       fireEvent.click(screen.getByText("Share"));
 
-      const expectedUrl =
-        "https://pdc2.csie.ncu.edu.tw:8888/shared-info/video1";
+      const expectedUrl = `${API_HOST}/shared-info/video1`;
       expect(screen.getByDisplayValue(expectedUrl)).toBeDefined();
     });
 
