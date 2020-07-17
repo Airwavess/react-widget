@@ -22,7 +22,7 @@
 
 **改善瀏覽嵌入至其他網站的元件頁面**
 
-由於元件使用 iframe 嵌入至其他網站，而為了使元件的樣式能夠較為符合其他網站，並沒有限制元件的 `height` 與 `width`，因此在單獨瀏覽嵌入至其他網站的元件頁面時，樣式是呈顯於滿版的情況。因此可以研究如何像是 gist 網站，能夠在嵌入至其他網站時僅保留程式碼區塊，但是在單獨瀏覽時，可以擁有較好的樣式。
+由於元件使用 iframe 嵌入至其他網站，而為了使元件的樣式能夠較為符合其他網站，並沒有限制元件的 `height` 與 `width`，因此在單獨瀏覽[嵌入至其他網站的元件頁面](https://react-widget.vercel.app/shared-info/image1)時，樣式是呈顯於滿版的情況。因此可以研究如何像是 [gist](https://gist.github.com/Airwavess/780c4c8099074388560ec77f0371b848)，能夠在嵌入至其他網站時僅保留程式碼區塊，但是在單獨瀏覽時，可以擁有較好的樣式。
 
 ## What would you do differently if you were allocated more time?
 
