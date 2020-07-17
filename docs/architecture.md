@@ -54,4 +54,4 @@ embed url 會連結至 `shared-info/[id].js`，使用者可以透過 embed url �
 
 ## API
 
-這個專案使用的 API 建立於另一個 [GitHUb 專案](https://github.com/Airwavess/react-widget-api)，技術為使用 next.js 的 API Routes。
+這個專案使用的 API 建立於另一個 [GitHub 專案](https://github.com/Airwavess/react-widget-api)，技術為使用 next.js 的 API Routes。
