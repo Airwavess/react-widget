@@ -51,3 +51,7 @@ embed url 會連結至 `shared-info/[id].js`，使用者可以透過 embed url �
 ## Tests
 
 這個專案使用 Jest 與 react-testing-library 作為主要的測試框架，所有的測試檔案放置於 `__test__/` 資料夾中，而測試檔案則是根據待測檔案的位置與名稱決定，例如 `__test__/pages/index.js`。
+
+## API
+
+這個專案使用的 API 建立於另一個 [GitHUb 專案](https://github.com/Airwavess/react-widget-api)，技術為使用 next.js 的 API Routes。
